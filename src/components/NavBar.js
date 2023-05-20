@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../index.css"
+import "../index.css";
 
 function NavBar() {
   return (
     <nav className="navbar">
+      <div className="logo">
+        <Link to="/">Chore Wizard</Link>
+      </div>
       <div className="nav-links">
-        <ul>
-          <li className="logo">
-            <Link to="/">Chore Wizard</Link>
-          </li>
-          <li>
+        <ul className="nav-list">
+          <li className="button">
             <Link to="/chores">View All Chores</Link>
           </li>
-          <li className="add-new-chore">
+          <li className="button">
             <Link to="/chores/new">Add New Chore</Link>
           </li>
         </ul>
@@ -23,3 +23,5 @@ function NavBar() {
 }
 
 export default NavBar;
+
+

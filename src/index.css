@@ -6,32 +6,32 @@
   background-color: #f1f1f1;
 }
 
-.nav-links ul {
+.logo {
+  font-size: 2.0rem;
+  margin-right: 20px;
+}
+
+.nav-links .nav-list {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
-.nav-links ul li {
+.nav-links .button {
   display: inline-block;
-  margin-right: 30px;
+  margin-left: 10px;
 }
 
-.nav-links ul li:last-child {
-  margin-right: 0;
-}
-
-.nav-links a {
+.nav-links .button a {
   text-decoration: none;
   color: #333;
-  padding: 5px;
-  font-size: 2.0rem;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  border: 1px solid #333;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.logo {
-  font-weight: bold;
-}
-
-.add-new-chore {
-  margin-left: auto;
+.nav-links .button a:hover {
+  background-color: #333;
+  color: #f1f1f1;
 }
