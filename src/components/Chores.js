@@ -16,8 +16,8 @@ function Chores() {
 
   const totalAmount = () => {
     let total = 0;
-    chores.map((chore) => {
-      return total += Number(chore.points);
+    chores.forEach((chore) => {
+      total += Number(chore.points);
     });
     return total;
   };
@@ -42,7 +42,7 @@ function Chores() {
             </tr>
           </thead>
           <tbody>
-            {Chores.map((chore, id) => {
+            {chores.map((chore, id) => {
               return (
                 <Chore
                   key={id}
