@@ -21,9 +21,9 @@ function EditChore() {
     setChore({ ...chore, [event.target.id]: event.target.value });
   };
 
-  const handleNumberChange = (event) => {
-    setChore({ ...chore, [event.target.id]: event.target.value });
-  };
+  // const handleNumberChange = (event) => {
+  //   setChore({ ...chore, [event.target.id]: event.target.value });
+  // };
 
   const handleSelectChange = (event) => {
     setChore({ ...chore, [event.target.id]: event.target.value });
@@ -59,63 +59,58 @@ function EditChore() {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="date">Date:</label>
+        <label htmlFor="due_date">Date:</label>
         <input
           className="form-control"
-          id="date"
-          value={chore.date}
+          id="due_date"
+          value={chore.due_date}
           type="text"
           onChange={handleTextChange}
           placeholder="date"
           required
         />
         <br />
-        <label htmlFor="itemName" className="form-label">Name:</label>
+        <label htmlFor="name" className="form-label">Name:</label>
         <input
           className="form-control"
-          id="itemName"
+          id="name"
           type="text"
-          value={chore.itemName}
+          value={chore.name}
           onChange={handleTextChange}
           placeholder="Name"
           required
         />
         <br />
-        <label className="form-label" htmlFor="amount">
-          Amount:
+        <label className="form-label" htmlFor="description">
+          Description:
         </label>
         <input
           className="form-control"
-          id="amount"
-          type="number"
-          value={chore.amount}
-          onChange={handleNumberChange}
+          id="description"
+          type="text"
+          value={chore.description}
+          onChange={handleTextChange}
           required
         />
         <br />
-        <label htmlFor="form-label">Category:</label>
+        <label htmlFor="status">Status:</label>
         <select
           className="form-select"
-          id="category"
+          id="status"
           type="text"
-          checked={chore.category}
+          value={chore.status}
           onChange={handleSelectChange}
         >
-          <option value="income">Income</option>
-          <option value="gift">Gift</option>
-          <option value="food">Food</option>
-          <option value="entertainment">Entertainment</option>
-          <option value="medical">Medical</option>
-          <option value="bill">Bill</option>
-          <option value="groceries">Groceries</option>
-          <option value="transportation-related">Transportation-related</option>
+          <option value="pending">Pending</option>
+          <option value="in_progress">In Progress</option>
+          <option value="completed">Completed</option>
         </select>
         <br />
         <input className="btn btn-primary" type="submit" />
       </form>
       <Link to={`/chores/${id}`}>
         <br />
-        <button className="btn btn-secondary">Nevermind!</button>
+        <button className="btn btn-secondary">Cancel</button>
       </Link>
     </div>
   );
