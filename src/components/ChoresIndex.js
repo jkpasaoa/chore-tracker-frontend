@@ -3,19 +3,15 @@ import Chore from "./Chore";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
+//console.log(API, "Testing api");
 
 function Chores() {
   const [chores, setChores] = useState([]);
-
-  const fetchChores = () => {
+  useEffect(() => {
     axios
       .get(`${API}/chores`)
       .then((response) => setChores(response.data))
-      .catch((error) => console.error(error));
-  };
-
-  useEffect(() => {
-    fetchChores();
+      .catch((e) => console.error(e));
   }, []);
 
   const totalAmount = () => {

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-
 const API = process.env.REACT_APP_API_URL;
 
 function NewChore(props) {
@@ -34,9 +33,7 @@ function NewChore(props) {
       .post(`${API}/chores`, chore)
       .then(() => {
         navigate('/chores');
-        props.fetchChores(); // Call the fetchChores function passed as a prop
-    })
-    .catch((c) => console.error("catch", c))
+      }).catch((c) => console.error("catch", c))
   }
 
   const handleClear = () => {
