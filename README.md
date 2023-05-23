@@ -7,8 +7,8 @@ Tracks completed chores, assigns new tasks, and monitors points.
 Promotes fairness, accountability, and accomplishment.
 
 # Deployed URLs
-[Deployed Front-end URL] (In Progress)
-[Deployed Back-end URL] (https://chore-tracker-backend.onrender.com)
+- [Deployed Front-end URL] (In Progress)
+- [Deployed Back-end URL] (https://chore-tracker-backend.onrender.com)
 
 # Features
 
