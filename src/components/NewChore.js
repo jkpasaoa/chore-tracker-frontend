@@ -1,9 +1,10 @@
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 const API = process.env.REACT_APP_API_URL;
 
-function NewChore(props) {
+function NewChore() {
   const navigate = useNavigate();
 
   const [chore, setChore] = useState({
@@ -11,7 +12,7 @@ function NewChore(props) {
     description: "",
     due_date: "",
     status: "",
-    points: 0,
+    points: 1, // Set a default value within the valid range
     priority: "",
     category: ""
   });
@@ -20,16 +21,28 @@ function NewChore(props) {
     setChore({ ...chore, [event.target.id]: event.target.value });
   };
 
-  // const handleNumberChange = (event) => {
+  // const handleSelectChange = (event) => {
   //   setChore({ ...chore, [event.target.id]: event.target.value });
-  // };
+  // };  
 
-  const handleSelectChange = (event) => {
-    setChore({ ...chore, [event.target.id]: event.target.value })
-  }
+  const handlePriorityChange = (event) => {
+    setChore({ ...chore, priority: event.target.value });
+  };
+
+  const handleStatusChange = (event) => {
+    setChore({ ...chore, status: event.target.value });
+  };
+
+  const handleCategoryChange = (event) => {
+    setChore({ ...chore, category: event.target.value });
+  };
 
   const addChore = async (newChore) => {
     try {
+      if (newChore.points < 1 || newChore.points > 5) {
+        throw new Error("Points value must be between 1 and 5.");
+      }
+
       const response = await axios.post(`${API}/chores`, newChore);
       if (response.data) {
         console.log(response.data);
@@ -46,21 +59,20 @@ function NewChore(props) {
   const handleClear = () => {
     setChore({
       name: "",
-    description: "",
-    due_date: 0,
-    status: "",
-    points: 0,
-    priority: "",
-    category: ""
+      description: "",
+      due_date: "",
+      status: "",
+      points: 1,
+      priority: "",
+      category: ""
     });
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addChore(chore)
+    addChore();
     handleClear();
   };
-
 
   return (
     <div className="New">
@@ -108,12 +120,24 @@ function NewChore(props) {
           id="status"
           type="text"
           value={chore.status}
-          onChange={handleSelectChange}
+          onChange={handleStatusChange}
         >
           <option value="Pending">Pending</option>
           <option value="In Progress">In Progress</option>
           <option value="Completed">Completed</option>
         </select>
+        <br />
+        <label htmlFor="points">Points:</label>
+        <input
+          className="form-control"
+          id="points"
+          type="number"
+          value={chore.points}
+          min={1}
+          max={5}
+          onChange={handleTextChange}
+          required
+        />
         <br />
         <label htmlFor="Priority">Priority:</label>
         <select
@@ -121,7 +145,7 @@ function NewChore(props) {
           id="priority"
           type="text"
           value={chore.priority}
-          onChange={handleSelectChange}
+          onChange={handlePriorityChange}
         >
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
@@ -134,7 +158,7 @@ function NewChore(props) {
           id="category"
           type="text"
           value={chore.category}
-          onChange={handleSelectChange}
+          onChange={handleCategoryChange}
         >
           <option value="Cleaning">Cleaning</option>
           <option value="Kitchen">Kitchen</option>
@@ -145,9 +169,13 @@ function NewChore(props) {
         <input
           className="btn btn-primary"
           type="submit"
-          value={"Submit New Chore"}
+          value="Submit New Chore"
         />
-        <button className="btn btn-secondary" type="button" onClick={handleClear}>
+        <button
+          className="btn btn-secondary"
+          type="button"
+          onClick={handleClear}
+        >
           Clear Fields
         </button>
       </form>
