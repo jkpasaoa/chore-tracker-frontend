@@ -8,10 +8,9 @@ function Chore({ chore }) {
 
         <Link to={`/chores/${chore.id}`}
         >
-          {chore.chore_name}
+          {chore.name}
         </Link>
       </td>
-      {/* <td className="name">{chore.name}</td> */}
       <td className="description">{chore.description}</td>
       <td className="due_date">{chore.due_date}</td>
       <td className="status">{chore.status}</td>

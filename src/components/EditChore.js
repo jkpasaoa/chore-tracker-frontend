@@ -97,12 +97,12 @@ function EditChore() {
           value={chore.status}
           onChange={handleSelectChange}
         >
-          <option value="pending">Pending</option>
-          <option value="in_progress">In Progress</option>
-          <option value="completed">Completed</option>
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
         </select>
         <br />
-        <label htmlFor="priority">Priority:</label>
+        <label htmlFor="Priority">Priority:</label>
         <select
           className="form-select"
           id="priority"
@@ -110,9 +110,9 @@ function EditChore() {
           value={chore.priority}
           onChange={handleSelectChange}
         >
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
         </select>
         <br />
         <label htmlFor="category">Category:</label>
@@ -123,9 +123,10 @@ function EditChore() {
           value={chore.category}
           onChange={handleSelectChange}
         >
-          <option value="home">Home</option>
-          <option value="work">Work</option>
-          <option value="school">School</option>
+          <option value="Cleaning">Cleaning</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Pet Care">Pet Care</option>
+          <option value="Gardening">Gardening</option>
         </select>
         <br />
         <input className="btn btn-primary" type="submit" />
