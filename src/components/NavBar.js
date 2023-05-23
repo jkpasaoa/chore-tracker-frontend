@@ -11,6 +11,9 @@ function NavBar() {
       <div className="nav-links">
         <ul className="nav-list">
           <li className="button">
+            <Link to="/about">About Me</Link>
+          </li>
+          <li className="button">
             <Link to="/chores">View All Chores</Link>
           </li>
           <li className="button">
