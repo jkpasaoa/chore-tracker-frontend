@@ -1,4 +1,66 @@
-# Getting Started with Create React App
+# Chore Wizard: A Chore Tracking App for Parents
+
+Chore Wizard helps parents track their kids' chores efficiently. It allows chore assignment, priority setting, due date tracking, point allocation, and chore categorization. Parents can ensure fair distribution of responsibilities and motivate kids with points as rewards.
+
+It Simplifies chore management.
+Tracks completed chores, assigns new tasks, and monitors points.
+Promotes fairness, accountability, and accomplishment.
+
+# Deployed URLs
+[Deployed Front-end URL] (In Progress)
+[Deployed Back-end URL] (https://chore-tracker-backend.onrender.com)
+
+# Features
+
+Chore Description: Provide detailed descriptions for each chore.
+Chore Priority: Assign different priority levels to chores.
+Due Date Tracking: Set due dates for chores.
+Chore Points: Assign point values from 1 to 5 to reflect difficulty.
+Chore Type: Categorize chores for effective organization.
+Benefits for Parents:
+
+# Future Plans
+Implement login and authorization system.
+Separate accounts for parents and kids.
+Personalized access to chore details and progress tracking.
+Fosters shared responsibility and teamwork.
+Chore Wizard is the ideal app for busy parents who want an organized chore routine and to teach valuable life skills. Say goodbye to chaos and hello to efficient chore management with Chore Wizard!
+
+## Authors
+- Jacqueline Pasaoa
+
+## Tech Stack
+
+- React
+- JavaScript
+- CSS
+- HTML
+- Bootstrap
+- Node.js
+- Express
+- SQL
+
+## Links
+
+- [Front-end GitHub Repo](https://github.com/jkpasaoa/chore-tracker-frontend)
+- [Back-end GitHub Repo](https://github.com/jkpasaoa/chore-tracker-backend)
+- [Deployed Front-end URL] (In Progress)
+- [Deployed Back-end URL] (https://chore-tracker-backend.onrender.com)
+- [Trello Board](https://trello.com/b/ZdB4DvG2/chore-wizard)
+
+## Instructions
+
+To run this application on your local machine, follow these steps:
+
+1. Clone the front-end GitHub repo and navigate to the project directory.
+2. Install the dependencies with `npm install`.
+3. Start the development server with `npm start`.
+4. Clone the back-end GitHub repo and navigate to the project directory.
+5. Install the dependencies with `npm install`.
+6. Start the server with `npm start`.
+7. Open your web browser and navigate to `http://localhost:3000`.
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,4 +130,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# chore-tracker-frontend
+# chore-tracker-frontend -->
