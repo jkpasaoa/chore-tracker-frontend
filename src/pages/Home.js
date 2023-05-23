@@ -5,9 +5,9 @@ function Home() {
     <div className="Home" style={{ maxWidth: '500px', margin: '0 auto', paddingTop: '50px' }}>
       <h2>Welcome</h2>
       <h3>To Chore Wizard!</h3>
-      Click<span>&nbsp;</span>
+      Click to<span>&nbsp;</span>
       <Link to="/chores">
-        All Chores
+        View All Chores
       </Link>
     </div>
   );
