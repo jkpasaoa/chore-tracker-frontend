@@ -9,7 +9,7 @@ function NewChore(props) {
   const [chore, setChore] = useState({
     name: "",
     description: "",
-    due_date: 0,
+    due_date: "",
     status: "",
     points: 0,
     priority: "",
@@ -28,13 +28,20 @@ function NewChore(props) {
     setChore({ ...chore, [event.target.id]: event.target.value })
   }
 
-  const addChore = () => {
-    axios
-      .post(`${API}/chores`, chore)
-      .then(() => {
-        navigate('/chores');
-      }).catch((c) => console.error("catch", c))
-  }
+  const addChore = async (newChore) => {
+    try {
+      const response = await axios.post(`${API}/chores`, newChore);
+      if (response.data) {
+        console.log(response.data);
+        navigate(`/chores`);
+      } else {
+        throw new Error("Error adding chore");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error adding chore");
+    }
+  };
 
   const handleClear = () => {
     setChore({
@@ -50,7 +57,7 @@ function NewChore(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addChore()
+    addChore(chore)
     handleClear();
   };
 
@@ -65,7 +72,7 @@ function NewChore(props) {
           value={chore.due_date}
           type="text"
           onChange={handleTextChange}
-          placeholder="date"
+          placeholder="YYYY-DD-MM Write the Date in this format"
           required
         />
         <br />
@@ -78,7 +85,7 @@ function NewChore(props) {
           type="text"
           value={chore.name}
           onChange={handleTextChange}
-          placeholder="Name"
+          placeholder="Name of Chore"
           required
         />
         <br />
@@ -91,6 +98,7 @@ function NewChore(props) {
           type="text"
           value={chore.description}
           onChange={handleTextChange}
+          placeholder="Describe the chore"
           required
         />
         <br />

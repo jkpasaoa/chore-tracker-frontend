@@ -3,15 +3,11 @@ import { Link } from "react-router-dom";
 function Chore({ chore }) {
   return (
     <tr>
-
       <td className="title">
-
-        <Link to={`/chores/${chore.id}`}
-        >
-          {chore.name}
-        </Link>
+        <h4>{chore.name}</h4>
+        <p>{chore.description}</p>
+        <Link to={`/chores/${chore.id}`}>View Details</Link>
       </td>
-      <td className="description">{chore.description}</td>
       <td className="due_date">{chore.due_date}</td>
       <td className="status">{chore.status}</td>
       <td className="points">{chore.points}</td>

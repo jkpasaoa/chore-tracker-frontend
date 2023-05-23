@@ -11,7 +11,7 @@ function EditChore() {
   const [chore, setChore] = useState({
     name: "",
     description: "",
-    due_date: 0,
+    due_date: "",
     status: "",
     points: 0,
     priority: "",
@@ -60,7 +60,7 @@ function EditChore() {
           value={chore.due_date}
           type="text"
           onChange={handleTextChange}
-          placeholder="date"
+          placeholder="YYYY-DD-MM Write the Date in this format"
           required
         />
         <br />
@@ -73,7 +73,7 @@ function EditChore() {
           type="text"
           value={chore.name}
           onChange={handleTextChange}
-          placeholder="Name"
+          placeholder="Name of Chore"
           required
         />
         <br />
@@ -86,6 +86,7 @@ function EditChore() {
           type="text"
           value={chore.description}
           onChange={handleTextChange}
+          placeholder="Describe the chore"
           required
         />
         <br />

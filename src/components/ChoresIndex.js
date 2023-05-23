@@ -37,8 +37,17 @@ function Chores() {
       <section>
         <table className="table table-striped table-hover text-center">
           <thead>
+          <tr>
+              <th colSpan="8" className="chore-title">
+              </th>
+            </tr>
             <tr>
-              <th></th>
+              <th>Chore/Description</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Points</th>
+              <th>Priority</th>
+              <th>Category</th>
             </tr>
           </thead>
           <tbody>
