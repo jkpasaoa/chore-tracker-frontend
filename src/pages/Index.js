@@ -1,4 +1,4 @@
-import Chores from "../components/Chores"
+import Chores from "../components/ChoresIndex"
 
 function Index() {
   return (

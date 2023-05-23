@@ -7,7 +7,7 @@ function Home() {
       <h3>To Chore Wizard!</h3>
       Click<span>&nbsp;</span>
       <Link to="/chores">
-        <span>Budgeted Transactions</span>
+        All Chores
       </Link>
     </div>
   );

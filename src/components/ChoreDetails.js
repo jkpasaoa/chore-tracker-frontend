@@ -9,21 +9,21 @@ const API = process.env.REACT_APP_API_URL;
 function ChoreDetails() {
   let navigate = useNavigate()
   const [chore, setChores] = useState({});
-  let { index } = useParams();
+  let { id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`${API}/chores/${index}`)
+      .get(`${API}/chores/${id}`)
       .then((response) => {
         setChores(response.data)
       }).catch(() => {
         navigate("/not-found")
       })
-  }, [index, navigate]);
+  }, [id, navigate]);
 
   const handleDelete = () => {
     axios
-      .delete(`${API}/chores/${index}`)
+      .delete(`${API}/chores/${id}`)
       .then(() => {
         navigate(`/chores`)
       })
@@ -35,14 +35,6 @@ function ChoreDetails() {
       <table>
         <tbody>
           <tr>
-            <th>Chore Updated Date:</th>
-            <td>{chore.updated_at}</td>
-          </tr>
-          <tr>
-            <th>Chore Creation Date:</th>
-            <td>{chore.created_at}</td>
-          </tr>
-          <tr>
             <th>Chore:</th>
             <td>{chore.name}</td>
           </tr>
@@ -51,23 +43,27 @@ function ChoreDetails() {
             <td>{chore.description}</td>
           </tr>
           <tr>
-            <th>Status:</th>
-            <td>
-              {chore.status}
-              <br />
-            </td>
-          </tr>
-          <tr>
-            <th>ID #:</th>
-            <td>{chore.id}</td>
-          </tr>
-          <tr>
             <th>Due Date:</th>
             <td>{chore.due_date}</td>
           </tr>
           <tr>
+            <th>Status:</th>
+            <td>{chore.status}</td>
+          </tr>
+          <tr>
             <th>Points:</th>
-            <td>{chore.points}</td>
+            <td>
+              {chore.points}
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <th>Priority:</th>
+            <td>{chore.priority}</td>
+          </tr>
+          <tr>
+            <th>Category</th>
+            <td>{chore.category}</td>
           </tr>
           <tr>
             <td colSpan="2">
@@ -79,7 +75,7 @@ function ChoreDetails() {
                 </div>
                 <br />
                 <div>
-                  <Link className="edit-button" to={`/chores/${index}/edit`}>
+                  <Link className="edit-button" to={`/chores/${id}/edit`}>
                     <button className="edit-button-title">Edit</button>
                   </Link>
                 </div>

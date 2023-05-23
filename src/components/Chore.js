@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
 
-function Chore({ chore, id }) {
-  // const date = new Date(transaction.date);
-  // const year = date.getFullYear();
-  // const month = date.toLocaleString('default', { month: 'short' });
-  // const day = date.getDate();
-
-  // const dateFormat = `${month} ${day}, ${year}`;
-
+function Chore({ chore }) {
   return (
     <tr>
-      <td>
-        {/* {dateFormat} */}
+
+      <td className="title">
+
+        <Link to={`/chores/${chore.id}`}
+        >
+          {chore.chore_name}
+        </Link>
       </td>
-      <td>
-        <Link to={`/chores/${id}`}>{chore.name}</Link>
-      </td>
-      <td>
-        <h5>{chore.status}</h5>
-      </td>
+      {/* <td className="name">{chore.name}</td> */}
+      <td className="description">{chore.description}</td>
+      <td className="due_date">{chore.due_date}</td>
+      <td className="status">{chore.status}</td>
+      <td className="points">{chore.points}</td>
+      <td className="priority">{chore.priority}</td>
+      <td className="category">{chore.category}</td>
+
     </tr>
   );
 }

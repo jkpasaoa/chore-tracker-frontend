@@ -13,17 +13,14 @@ function EditChore() {
     description: "",
     due_date: 0,
     status: "",
-    created_at: "",
-    updated_at: ""
+    points: 0,
+    priority: "",
+    category: ""
   });
 
   const handleTextChange = (event) => {
     setChore({ ...chore, [event.target.id]: event.target.value });
   };
-
-  // const handleNumberChange = (event) => {
-  //   setChore({ ...chore, [event.target.id]: event.target.value });
-  // };
 
   const handleSelectChange = (event) => {
     setChore({ ...chore, [event.target.id]: event.target.value });
@@ -33,23 +30,20 @@ function EditChore() {
     axios
       .get(`${API}/chores/${id}`)
       .then((response) => {
-        setChore(response.data)
+        setChore(response.data);
       })
-      .catch((e) => console.error(e))
-
+      .catch((e) => console.error(e));
   }, [id]);
-
 
   const updateChore = () => {
     axios
       .put(`${API}/chores/${id}`, chore)
       .then((response) => {
         setChore(response.data);
-        navigate(`/chores/${id}`)
-      }
-      )
+        navigate(`/chores/${id}`);
+      })
       .catch((e) => console.error(e));
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -70,7 +64,9 @@ function EditChore() {
           required
         />
         <br />
-        <label htmlFor="name" className="form-label">Name:</label>
+        <label htmlFor="name" className="form-label">
+          Name:
+        </label>
         <input
           className="form-control"
           id="name"
@@ -104,6 +100,32 @@ function EditChore() {
           <option value="pending">Pending</option>
           <option value="in_progress">In Progress</option>
           <option value="completed">Completed</option>
+        </select>
+        <br />
+        <label htmlFor="priority">Priority:</label>
+        <select
+          className="form-select"
+          id="priority"
+          type="text"
+          value={chore.priority}
+          onChange={handleSelectChange}
+        >
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <br />
+        <label htmlFor="category">Category:</label>
+        <select
+          className="form-select"
+          id="category"
+          type="text"
+          value={chore.category}
+          onChange={handleSelectChange}
+        >
+          <option value="home">Home</option>
+          <option value="work">Work</option>
+          <option value="school">School</option>
         </select>
         <br />
         <input className="btn btn-primary" type="submit" />
