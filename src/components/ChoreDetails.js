@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { Container, Table, Button, ButtonGroup } from "react-bootstrap";
+import { Container, Table, Button, ButtonGroup, Modal } from "react-bootstrap";
 
 import "../index.css";
 
@@ -10,6 +10,8 @@ const API = process.env.REACT_APP_API_URL;
 function ChoreDetails() {
   let navigate = useNavigate();
   const [chore, setChores] = useState({});
+  const [showConfirm, setShowConfirm] = useState(false);
+
   let { id } = useParams();
 
   useEffect(() => {
@@ -30,6 +32,21 @@ function ChoreDetails() {
         navigate(`/chores`);
       })
       .catch((e) => console.error(e));
+  };
+
+  //---------
+  const handleDeleteClick = () => {
+    setShowConfirm(true);
+  };
+
+  const handleCancelClick = () => {
+    navigate(`/chores`);
+    setShowConfirm(false);
+  };
+
+  const handleConfirmClick = () => {
+    handleDelete();
+    setShowConfirm(false);
   };
 
   return (
@@ -71,14 +88,35 @@ function ChoreDetails() {
             <td colSpan="2">
               <ButtonGroup>
                 <Link to={`/chores`}>
-                  <Button variant="secondary">Back</Button>
+                  <Button variant="secondary">Back</Button>&nbsp;&nbsp;
                 </Link>
                 <Link className="edit-button" to={`/chores/${id}/edit`}>
-                  <Button variant="primary">Edit</Button>
+                  <Button variant="primary">Edit</Button>&nbsp;&nbsp;
                 </Link>
-                <Button variant="danger" onClick={handleDelete}>
+                <button
+                  onClick={handleDeleteClick}
+                  className="btn btn-danger btn-sm"
+                >
                   Delete
-                </Button>
+                </button>
+                {/* <Button variant="danger" onClick={handleDelete}>
+                  Delete
+                </Button> */}
+                <Modal show={showConfirm} onHide={handleCancelClick}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Confirm Deletion</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>Are you sure you want this chore to be deleted?</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCancelClick}>
+                      No
+                    </Button>
+                    <Button variant="danger" onClick={handleConfirmClick}>
+                      Yes
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+
               </ButtonGroup>
             </td>
           </tr>
