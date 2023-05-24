@@ -1,30 +1,28 @@
 # Chore Wizard: A Chore Tracking App for Parents
+- Chore Wizard is the ideal app for busy parents who want an organized chore routine and to teach valuable life skills. Say goodbye to chaos and hello to efficient chore management with Chore Wizard! It is an app that helps parents track their kids' chores efficiently. It allows chore assignment, priority setting, due date tracking, point allocation, and chore categorization. Parents can ensure fair distribution of responsibilities and motivate kids with points as rewards.
 
-Chore Wizard helps parents track their kids' chores efficiently. It allows chore assignment, priority setting, due date tracking, point allocation, and chore categorization. Parents can ensure fair distribution of responsibilities and motivate kids with points as rewards.
-
-It Simplifies chore management.
+- It Simplifies chore management.
 Tracks completed chores, assigns new tasks, and monitors points.
 Promotes fairness, accountability, and accomplishment.
 
 # Deployed URLs
-- [Deployed Front-end URL] (In Progress)
+- [Deployed Front-end URL] (https://chore-wizard.netlify.app/)
 - [Deployed Back-end URL] (https://chore-tracker-backend.onrender.com)
 
 # Features
-
-Chore Description: Provide detailed descriptions for each chore.
-Chore Priority: Assign different priority levels to chores.
-Due Date Tracking: Set due dates for chores.
-Chore Points: Assign point values from 1 to 5 to reflect difficulty.
-Chore Type: Categorize chores for effective organization.
-Benefits for Parents:
+Chore Description: 
+- Provide detailed descriptions for each chore.
+- Chore Priority: Assign different priority levels to chores.
+- Due Date Tracking: Set due dates for chores.
+- Chore Points: Assign point values from 1 to 5 to reflect difficulty.
+- Chore Type: Categorize chores for effective organization.
+- Benefits for Parents
 
 # Future Plans
-Implement login and authorization system.
-Separate accounts for parents and kids.
-Personalized access to chore details and progress tracking.
-Fosters shared responsibility and teamwork.
-Chore Wizard is the ideal app for busy parents who want an organized chore routine and to teach valuable life skills. Say goodbye to chaos and hello to efficient chore management with Chore Wizard!
+- Implement login and authorization system.
+- Separate accounts for parents and kids.
+- Personalized access to chore details and progress tracking.
+- Fosters shared responsibility and teamwork.
 
 ## Authors
 - Jacqueline Pasaoa
@@ -44,7 +42,7 @@ Chore Wizard is the ideal app for busy parents who want an organized chore routi
 
 - [Front-end GitHub Repo](https://github.com/jkpasaoa/chore-tracker-frontend)
 - [Back-end GitHub Repo](https://github.com/jkpasaoa/chore-tracker-backend)
-- [Deployed Front-end URL] (In Progress)
+- [Deployed Front-end URL] (https://chore-wizard.netlify.app/)
 - [Deployed Back-end URL] (https://chore-tracker-backend.onrender.com)
 - [Trello Board](https://trello.com/b/ZdB4DvG2/chore-wizard)
 
