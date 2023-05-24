@@ -32,7 +32,7 @@ function Chores() {
   }
 
   return (
-    <div className="Chores">
+    <div className="text-end">
       <h3 className={totalColor}>Chore Points: {totalAmount()} </h3>
       <section>
         <table className="table table-striped table-hover text-center">

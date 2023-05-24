@@ -35,3 +35,9 @@
   background-color: #333;
   color: #f1f1f1;
 }
+
+.about-card {
+  background: linear-gradient(to top, #ff69b4, #ffffff);
+  color: #000000;
+  border: none;
+}
