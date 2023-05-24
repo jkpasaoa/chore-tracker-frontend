@@ -1,7 +1,7 @@
 # Chore Wizard: A Chore Tracking App for Parents
-- Chore Wizard is the ideal app for busy parents who want an organized chore routine and to teach valuable life skills. Say goodbye to chaos and hello to efficient chore management with Chore Wizard! It is an app that helps parents track their kids' chores efficiently. It allows chore assignment, priority setting, due date tracking, point allocation, and chore categorization. Parents can ensure fair distribution of responsibilities and motivate kids with points as rewards.
+Chore Wizard is the ideal app for busy parents who want an organized chore routine and to teach valuable life skills. Say goodbye to chaos and hello to efficient chore management with Chore Wizard! It is an app that helps parents track their kids' chores efficiently. It allows chore assignment, priority setting, due date tracking, point allocation, and chore categorization. Parents can ensure fair distribution of responsibilities and motivate kids with points as rewards.
 
-- It Simplifies chore management.
+It Simplifies chore management.
 Tracks completed chores, assigns new tasks, and monitors points.
 Promotes fairness, accountability, and accomplishment.
 
