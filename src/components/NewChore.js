@@ -70,7 +70,7 @@ function NewChore() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addChore();
+    addChore(chore);
     handleClear();
   };
 
@@ -171,6 +171,7 @@ function NewChore() {
           type="submit"
           value="Submit New Chore"
         />
+        &nbsp;&nbsp;
         <button
           className="btn btn-secondary"
           type="button"

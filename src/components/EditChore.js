@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { Form, Button, Row, Col } from "react-bootstrap";
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -52,92 +54,178 @@ function EditChore() {
 
   return (
     <div className="Edit">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="due_date">Date:</label>
-        <input
-          className="form-control"
-          id="due_date"
-          value={chore.due_date}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="YYYY-DD-MM Write the Date in this format"
-          required
-        />
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="due_date">
+          <Form.Label>Date:</Form.Label>
+          <Form.Control
+            value={chore.due_date}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="YYYY-DD-MM Write the Date in this format"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="name">
+          <Form.Label>Name:</Form.Label>
+          <Form.Control
+            type="text"
+            value={chore.name}
+            onChange={handleTextChange}
+            placeholder="Name of Chore"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="description">
+          <Form.Label>Description:</Form.Label>
+          <Form.Control
+            type="text"
+            value={chore.description}
+            onChange={handleTextChange}
+            placeholder="Describe the chore"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="status">
+          <Form.Label>Status:</Form.Label>
+          <Form.Select
+            value={chore.status}
+            onChange={handleSelectChange}
+          >
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group controlId="priority">
+          <Form.Label>Priority:</Form.Label>
+          <Form.Select
+            value={chore.priority}
+            onChange={handleSelectChange}
+          >
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group controlId="category">
+          <Form.Label>Category:</Form.Label>
+          <Form.Select
+            value={chore.category}
+            onChange={handleSelectChange}
+          >
+            <option value="Cleaning">Cleaning</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Pet Care">Pet Care</option>
+            <option value="Gardening">Gardening</option>
+          </Form.Select>
+        </Form.Group>
         <br />
-        <label htmlFor="name" className="form-label">
-          Name:
-        </label>
-        <input
-          className="form-control"
-          id="name"
-          type="text"
-          value={chore.name}
-          onChange={handleTextChange}
-          placeholder="Name of Chore"
-          required
-        />
-        <br />
-        <label className="form-label" htmlFor="description">
-          Description:
-        </label>
-        <input
-          className="form-control"
-          id="description"
-          type="text"
-          value={chore.description}
-          onChange={handleTextChange}
-          placeholder="Describe the chore"
-          required
-        />
-        <br />
-        <label htmlFor="status">Status:</label>
-        <select
-          className="form-select"
-          id="status"
-          type="text"
-          value={chore.status}
-          onChange={handleSelectChange}
-        >
-          <option value="Pending">Pending</option>
-          <option value="In Progress">In Progress</option>
-          <option value="Completed">Completed</option>
-        </select>
-        <br />
-        <label htmlFor="Priority">Priority:</label>
-        <select
-          className="form-select"
-          id="priority"
-          type="text"
-          value={chore.priority}
-          onChange={handleSelectChange}
-        >
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
-        <br />
-        <label htmlFor="category">Category:</label>
-        <select
-          className="form-select"
-          id="category"
-          type="text"
-          value={chore.category}
-          onChange={handleSelectChange}
-        >
-          <option value="Cleaning">Cleaning</option>
-          <option value="Kitchen">Kitchen</option>
-          <option value="Pet Care">Pet Care</option>
-          <option value="Gardening">Gardening</option>
-        </select>
-        <br />
-        <input className="btn btn-primary" type="submit" />
-      </form>
-      <Link to={`/chores/${id}`}>
-        <br />
-        <button className="btn btn-secondary">Cancel</button>
-      </Link>
+        <Row>
+          <Col>
+            <Button variant="primary" type="submit">
+              Update
+            </Button>
+          </Col>
+          <Col>
+            <Link to={`/chores/${id}`}>
+              <Button variant="secondary">Cancel</Button>
+            </Link>
+          </Col>
+        </Row>
+      </Form>
     </div>
   );
 }
 
 export default EditChore;
+
+//     <div className="Edit">
+//       <form onSubmit={handleSubmit}>
+//         <label htmlFor="due_date">Date:</label>
+//         <input
+//           className="form-control"
+//           id="due_date"
+//           value={chore.due_date}
+//           type="text"
+//           onChange={handleTextChange}
+//           placeholder="YYYY-DD-MM Write the Date in this format"
+//           required
+//         />
+//         <br />
+//         <label htmlFor="name" className="form-label">
+//           Name:
+//         </label>
+//         <input
+//           className="form-control"
+//           id="name"
+//           type="text"
+//           value={chore.name}
+//           onChange={handleTextChange}
+//           placeholder="Name of Chore"
+//           required
+//         />
+//         <br />
+//         <label className="form-label" htmlFor="description">
+//           Description:
+//         </label>
+//         <input
+//           className="form-control"
+//           id="description"
+//           type="text"
+//           value={chore.description}
+//           onChange={handleTextChange}
+//           placeholder="Describe the chore"
+//           required
+//         />
+//         <br />
+//         <label htmlFor="status">Status:</label>
+//         <select
+//           className="form-select"
+//           id="status"
+//           type="text"
+//           value={chore.status}
+//           onChange={handleSelectChange}
+//         >
+//           <option value="Pending">Pending</option>
+//           <option value="In Progress">In Progress</option>
+//           <option value="Completed">Completed</option>
+//         </select>
+//         <br />
+//         <label htmlFor="Priority">Priority:</label>
+//         <select
+//           className="form-select"
+//           id="priority"
+//           type="text"
+//           value={chore.priority}
+//           onChange={handleSelectChange}
+//         >
+//           <option value="Low">Low</option>
+//           <option value="Medium">Medium</option>
+//           <option value="High">High</option>
+//         </select>
+//         <br />
+//         <label htmlFor="category">Category:</label>
+//         <select
+//           className="form-select"
+//           id="category"
+//           type="text"
+//           value={chore.category}
+//           onChange={handleSelectChange}
+//         >
+//           <option value="Cleaning">Cleaning</option>
+//           <option value="Kitchen">Kitchen</option>
+//           <option value="Pet Care">Pet Care</option>
+//           <option value="Gardening">Gardening</option>
+//         </select>
+//         <br />
+//         <input className="btn btn-primary" type="submit" />
+//       </form>
+//       <Link to={`/chores/${id}`}>
+//         <br />
+//         <button className="btn btn-secondary">Cancel</button>
+//       </Link>
+//     </div>
+//   );
+// }
+
+// export default EditChore;
