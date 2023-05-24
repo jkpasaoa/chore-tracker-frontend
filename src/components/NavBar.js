@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="logo">
-      <img src="https://raw.githubusercontent.com/jkpasaoa/images/main/rm-wizard-guy.png" alt="wizard" style={{ width: "50px", height: "50px" }}></img>
+        <img src="https://raw.githubusercontent.com/jkpasaoa/images/main/rm-wizard-guy.png" alt="wizard" style={{ width: "50px", height: "50px" }}></img>
         <Link to="/">Chore Wizard</Link>
       </div>
       <div className="nav-links">

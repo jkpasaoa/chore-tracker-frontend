@@ -51,7 +51,7 @@ function ChoreDetails() {
 
   return (
     <Container className="text-center">
-      <Table>
+      <Table className="table-shadow">
         <tbody>
           <tr>
             <th>Chore:</th>

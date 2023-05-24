@@ -12,12 +12,14 @@ import NotFound from "./pages/NotFound";
 
 //COMPONENTS
 import NavBar from "./components/NavBar";
+import SparklingCursor from "./components/SparklingCursor"
 
 function App() {
   return (
     <div className="App">
       <Router>
         <NavBar />
+        <SparklingCursor />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

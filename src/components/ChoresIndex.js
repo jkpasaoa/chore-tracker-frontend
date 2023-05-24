@@ -37,7 +37,7 @@ function Chores() {
       <section>
         <table className="table table-striped table-hover text-center">
           <thead>
-          <tr>
+            <tr>
               <th colSpan="8" className="chore-title">
               </th>
             </tr>
@@ -56,7 +56,7 @@ function Chores() {
                 <Chore
                   key={chore.id}
                   chore={chore}
-                  // id={id}
+                // id={id}
                 />
               );
             })}
