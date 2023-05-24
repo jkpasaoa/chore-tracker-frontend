@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Image, Card } from "react-bootstrap";
 import Jacqueline from "../assets/Jacqueline.jpg";
 
@@ -9,7 +10,8 @@ function About() {
         <Card.Body>
           <div className="text-left">
             <h4>
-              Chore Wizard is an app designed to help parents manage their children's chores, fostering responsibility and accountability. By providing an organized system for assigning and tracking tasks, it simplifies household management and strengthens the parent-child bond.
+              <img src="https://raw.githubusercontent.com/jkpasaoa/images/main/rm-wizard-guy.png" alt="wizard" style={{ width: "35px", height: "35px" }}></img>
+              <Link to="/">Chore Wizard</Link> is an app designed to help parents manage their children's chores, fostering responsibility and accountability. By providing an organized system for assigning and tracking tasks, it simplifies household management and strengthens the parent-child bond.
             </h4>
             <br />
             <h4>
