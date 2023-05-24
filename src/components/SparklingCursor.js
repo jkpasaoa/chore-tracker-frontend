@@ -16,3 +16,4 @@ export default SparklingCursor;
 
 // Code for SparklingCursor component obtained
 // from: https://github.com/lindelof/react-mouse-particles
+// npm install --save react-mouse-particles

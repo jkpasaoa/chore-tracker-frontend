@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Image, Card } from "react-bootstrap";
 import Jacqueline from "../assets/Jacqueline.jpg";
+import linkedin from "../assets/linkedin.svg"
 
 function About() {
   return (
@@ -20,7 +21,8 @@ function About() {
             <br />
           </div>
           <h3 className="text-center">
-            Follow <a href="https://www.linkedin.com/in/jacquelinepasaoa/">Jacqueline Pasaoa</a> on LinkedIn!
+            <img src="https://raw.githubusercontent.com/jkpasaoa/images/main/Direction-Arrow-Follow-Lane-Left-Side-Signs-Road-6623640.jpeg" alt="rightSign" style={{ width: "45px", height: "35px" }}>
+            </img> Follow <a href="https://www.linkedin.com/in/jacquelinepasaoa/">Jacqueline Pasaoa</a> on <Image src={linkedin} alt="linkedinIcon" width="35px" height="35px" /> LinkedIn!
           </h3>
           <div className="d-flex justify-content-center">
             <div className="mr-4">
