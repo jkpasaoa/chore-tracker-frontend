@@ -121,7 +121,9 @@ function NewChore() {
           type="text"
           value={chore.status}
           onChange={handleStatusChange}
+          required
         >
+          <option value=""></option>
           <option value="Pending">Pending</option>
           <option value="In Progress">In Progress</option>
           <option value="Completed">Completed</option>
@@ -146,7 +148,9 @@ function NewChore() {
           type="text"
           value={chore.priority}
           onChange={handlePriorityChange}
+          required
         >
+          <option value=""></option>
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
           <option value="High">High</option>
@@ -159,7 +163,9 @@ function NewChore() {
           type="text"
           value={chore.category}
           onChange={handleCategoryChange}
+          required
         >
+          <option value=""></option>
           <option value="Cleaning">Cleaning</option>
           <option value="Kitchen">Kitchen</option>
           <option value="Pet Care">Pet Care</option>
