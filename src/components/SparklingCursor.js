@@ -6,7 +6,7 @@ class SparklingCursor extends Component {
   render() {
     return (
       <>
-        <div>...</div>
+        <div></div>
         <MouseParticles g={1} num={6} color="random" cull="stats,image-wrapper" level={6} />
       </>
     )
